@@ -1,0 +1,14 @@
+packet-logger:
+  enabled: true
+  send_headers:
+    - user-agent
+    - x-forwarded-for
+    - x-b3-traceid
+    - content-length
+  receive_headers:
+    - content-length
+    - content-type
+  drop_event:
+    - /healthCheck/_check
+    - /actuator/health
+  tag: packet-logger
